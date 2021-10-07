@@ -48,6 +48,7 @@ namespace myScript
         private void OnCollisionEnter2D(Collision2D other)
         {
             Debug.LogWarning($"撞到 {other.gameObject.name}");
+            if (!isLive) return;
             Die();
         }
 
@@ -77,6 +78,7 @@ namespace myScript
             bird.velocity = Vector2.zero;
             isLive = false;
             MySoundManger.instance.PlayDie();
+
         }
     }
 }
